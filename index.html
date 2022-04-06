@@ -1,0 +1,45 @@
+<html style = "height: 100%; margin:0;">
+
+    <head>
+    
+        <title>Map Test</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="Scripts/leaflet/leaflet.css">
+        <script src="Scripts/leaflet/leaflet.js"></script>
+        
+    </head>
+
+    <body "height: 100%; margin:0;">
+    
+    <div id="map" style="width: 100%; height: 100%; background:#FFFFFF; margin:0;"></div>
+        
+        
+        <script type="text/javascript">
+            
+            // Establish map
+            var map = L.map('map').setView([0,0], 0);
+            
+            // TileLayers
+            L.tileLayer('Output/{z}/{x}/{y}.png', {
+                minZoom:2,
+                maxZoom:7,
+                noWrap:true,
+            }
+            ).addTo(map);
+            
+            
+            //Markers and popups
+            var marker = L.marker([-10,-50]).addTo(map);
+            marker.bindPopup("Lake")
+        
+        
+        
+        
+        </script>
+    
+    </body>
+    
+    
+</html>
